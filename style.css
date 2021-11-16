@@ -1,0 +1,17 @@
+/* Error: Functions may not be declared in control directives.
+ *    ,
+ * 86 | @function test1($list)
+ *    | ^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   sass\style.scss 86:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Functions may not be declared in control directives.\a    \2577 \a 86 \2502  @function test1($list)\d\a    \2502  ^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\style.scss 86:1  root stylesheet";
+}
