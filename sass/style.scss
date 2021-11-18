@@ -1,0 +1,97 @@
+$primary-color : #ff752f;
+
+body{
+		
+	color : $primary-color;
+	
+}
+.text{
+	color:red;
+	font-size: 20px;
+}
+textarea{
+@extend .text;
+}
+h1{
+	@extend .text;
+}
+@mixin border($color : yellow,$width : 2px){
+	border: solid $width $color;
+
+}
+.btn{
+	@include border(yellow,2px);
+}
+
+@function background($background-color)
+{
+	@if $background-color !='white'{
+@return white;
+	}
+@else{
+@return black;
+}
+	
+}
+
+.button{
+	display: inline-block;
+	color :$primary-color;
+	text-align: center;
+	border: solid 2 px $primary-color;
+}
+
+.button-alert{
+	a{
+		@extend .button;
+		border-radius:  4px;
+	}
+}
+
+@mixin inline-block ($margin : 10px){
+	display : inline-block;
+	margin-left: $margin;
+}
+
+#box{
+	font: {
+		weight: bold;
+		family: Algerian;
+	
+	}
+	@include inline-block()
+}
+
+@for $i from 1 through 3 {
+	.m-#{$i}{
+		margin: 0 ($i*0.25rem);
+	}
+$primary-color : #ff752f;
+.btn{
+	background: $primary-color;
+	border-radius: 5px;
+	@if lightness($primary-color)>50% 
+	{
+		color :#ffb60b;
+	}
+	@else{
+		color :#ff1f17
+	}
+
+}
+
+
+
+$langages:'HTML5',' CSS3','JAVA', 'React';
+@function test1($list)
+{
+@return nth($list,1);
+}
+@function test2($list){
+@return nth($list,length($list));
+}
+.langage{
+	content:test1($langages);
+
+}
+}
